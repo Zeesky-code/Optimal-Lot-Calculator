@@ -17,6 +17,24 @@ public class OLCalculator {
 		System.out.println("Enter interest rate: ");
 		double interestRate = scanner.nextDouble();
 
+		// Next request lead time, lead time demand and lead time standard
+		System.out.println("Enter lead time: ");
+		double leadTime = scanner.nextDouble();
+
+		System.out.println("Enter lead time demand: ");
+		double leadTimeDemand = scanner.nextDouble();
+
+		System.out.println("Enter lead time standard: ");
+		double leadTimeStandard = scanner.nextDouble();
+
+		//Request z and L(z) values
+
+		System.out.println("Enter z value: ");
+		double z = scanner.nextDouble();
+
+		System.out.println("Enter L(z) value: ");
+		double Lz = scanner.nextDouble();
+		
 		System.out.println("Hello World!");
 		scanner.close();
 	}
