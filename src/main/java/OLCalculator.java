@@ -34,7 +34,7 @@ public class OLCalculator {
 
 		System.out.println("Enter L(z) value: ");
 		double Lz = scanner.nextDouble();
-		
+
 		System.out.println("Hello World!");
 		scanner.close();
 	}
