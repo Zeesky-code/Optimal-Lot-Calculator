@@ -14,8 +14,11 @@ public class OLCalculator {
 		System.out.println("Enter penalty cost: ");
 		double penaltyCost = scanner.nextDouble();
 
-		System.out.println("Enter interest rate: ");
+		System.out.println("Enter interest rate in percentage: ");
 		double interestRate = scanner.nextDouble();
+
+		//Calculate holding cost
+		double holdingCost = (unitCost * interestRate)/100;
 
 		// Next request lead time, lead time demand and lead time standard
 		System.out.println("Enter lead time: ");
