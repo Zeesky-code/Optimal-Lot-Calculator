@@ -67,7 +67,7 @@ public class OLCalculator {
 
 
 		} while(
-				i == 0 || ((Math.abs(reorderPoints.get(i)-reorderPoints.get(i - 1))>1) || (Math.abs(lot_size.get(i)-lot_size.get(i-1))>1))
+				i == 0 || ((Math.abs(reorderPoints.get(i)-reorderPoints.get(i - 1))>(reorderPoints.get(i)/100)) || (Math.abs(lot_size.get(i)-lot_size.get(i-1))>(lot_size.get(i)/100)))
 		);
 
 
