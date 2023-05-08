@@ -80,7 +80,7 @@ public class OLCalculator {
 		System.out.println("The proportion of order cycles in which no stock out occurs " + (1 - (lotSize * holdingCost) / (penaltyCost * annualDemand)) * 100 + "%");
 		System.out.println();
 		System.out.println("The proportion of demands that are not met");
-		System.out.println("Expected Expected demand per cycle is Q = " + (lotSize + 1));
+		System.out.println("Expected demand per cycle is Q = " + (lotSize + 1));
 		System.out.println("Expected number of stock outs per cycle is n(R) = " + n_r);
 		System.out.println("Thus, proportion of demands that are not met is " + "= " + ((n_r/lotSize) * 100));
 		scanner.close();
