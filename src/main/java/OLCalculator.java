@@ -65,25 +65,32 @@ public class OLCalculator {
 
 		scanner.close();
 
-		System.out.println("Optimal lot size and reorder point (Q,R) " + lotSize + " : " + reorderPoint);
+		System.out.println("Optimal lot size and reorder point (Q,R) " + round(lotSize) + " : " + round(reorderPoint));
 		System.out.println();
 		System.out.println("Number of iterations : " + count);
 		System.out.println();
-		System.out.println("The safety stock : " + (reorderPoint - leadTimeDemand));
+		System.out.println("The safety stock : " + round(reorderPoint - leadTimeDemand));
 		System.out.println();
-		System.out.println("Average annual holding cost : " + (holdingCost * ((lotSize / 2) + reorderPoint - leadTimeDemand)));
-		System.out.println("Average annual ordering cost : " + (orderingCost * annualDemand) / lotSize);
-		System.out.println("Average annual penalty cost : " + (penaltyCost * annualDemand * n_r) / lotSize);
+		System.out.println("Average annual holding cost : " + round(holdingCost * ((lotSize / 2) + reorderPoint - leadTimeDemand)));
+		System.out.println("Average annual ordering cost : " + round((orderingCost * annualDemand) / lotSize));
+		System.out.println("Average annual penalty cost : " + round((penaltyCost * annualDemand * n_r) / lotSize));
 		System.out.println();
-		System.out.println("Average time between the placement of orders : " + lotSize / annualDemand);
+		System.out.println("Average time between the placement of orders : " + round(lotSize / annualDemand));
 		System.out.println();
-		System.out.println("The proportion of order cycles in which no stock out occurs " + (1 - (lotSize * holdingCost) / (penaltyCost * annualDemand)) * 100 + "%");
+		System.out.println("The proportion of order cycles in which no stock out occurs " + round((1 - (lotSize * holdingCost) / (penaltyCost * annualDemand)) * 100 )+ "%");
 		System.out.println();
 		System.out.println("The proportion of demands that are not met");
-		System.out.println("Expected demand per cycle is Q = " + (lotSize + 1));
-		System.out.println("Expected number of stock outs per cycle is n(R) = " + n_r);
-		System.out.println("Thus, proportion of demands that are not met is " + "= " + ((n_r/lotSize) * 100));
+		System.out.println("Expected demand per cycle is Q = " + round(lotSize + 1));
+		System.out.println("Expected number of stock outs per cycle is n(R) = " + round(n_r));
+		System.out.println("Thus, proportion of demands that are not met is " + "= " + round((n_r/lotSize) * 100));
 		scanner.close();
+	}
+	// Round function
+	public static double round(double value) {
+		long factor = (long) Math.pow(10, 3);
+		value = value * factor;
+		long tmp = Math.round(value);
+		return (double) tmp / factor;
 	}
 }
 
